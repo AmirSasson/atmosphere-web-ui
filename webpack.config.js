@@ -2,6 +2,17 @@ var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
 
+switch (process.env.NODE_ENV) {
+  case 'prod':
+  case 'production':
+    module.exports = require('./config/webpack.prod');
+    break;
+  case 'dev':
+  case 'development':
+  default:
+    module.exports = require('./webpack.development.js');
+}
+
 // Webpack Config
 var webpackConfig = {
   entry: {
@@ -32,7 +43,7 @@ var webpackConfig = {
      * See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
      */
     // NOTE: when adding more properties, make sure you include them in custom-typings.d.ts
-    new DefinePlugin({
+    new webpack.DefinePlugin({
       'ENV': JSON.stringify(METADATA.ENV),
       'API_URL': JSON.stringify(METADATA.API_URL),
       'HMR': METADATA.HMR,

@@ -1,4 +1,4 @@
-import { EmotionsDashboardComponent } from './dashboard/dashboard.component';
+import { EmotionsDashboardComponent } from './dashboard/emotions-dashboard.component';
 import { Routes } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';

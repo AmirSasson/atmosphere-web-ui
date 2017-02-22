@@ -25,3 +25,10 @@ export class EmotionsStat extends Emotion {
     super();
   }
 }
+
+export class EmotionPoint {
+  timestamp: number;
+  emotionName: Array<string>;
+  emotionValue: number;
+
+}

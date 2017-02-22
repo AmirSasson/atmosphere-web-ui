@@ -1,5 +1,7 @@
+import { EmotionsTrendComponent } from './dashboard/emotions-trend.component';
+import { EmotionChartComponent } from './dashboard/emotion-chart.component';
 import { EmotionsService } from './dashboard/shared/emotions.service';
-import { EmotionsDashboardComponent } from './dashboard/dashboard.component';
+import { EmotionsDashboardComponent } from './dashboard/emotions-dashboard.component';
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
@@ -8,6 +10,8 @@ import { GithubService } from './github/shared/github.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'angular2-highcharts';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -26,20 +30,24 @@ import { ContactComponent } from './contact/contact.component';
     RepoDetailComponent,
     HomeComponent,
     ContactComponent,
-    EmotionsDashboardComponent
+    EmotionsDashboardComponent,
+    EmotionChartComponent,
+    EmotionsTrendComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(rootRouterConfig, { useHash: true }),
+    ChartsModule,
+    ChartModule.forRoot(require('highcharts'))
   ],
   providers: [
     GithubService,
     EmotionsService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 
