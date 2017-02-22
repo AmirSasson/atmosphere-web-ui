@@ -1,3 +1,4 @@
+import { EmotionAvgChartComponent } from './dashboard/emotion-avg-chart.component.';
 import { EmotionsTrendComponent } from './dashboard/emotions-trend.component';
 import { EmotionChartComponent } from './dashboard/emotion-chart.component';
 import { EmotionsService } from './dashboard/shared/emotions.service';
@@ -32,7 +33,8 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent,
     EmotionsDashboardComponent,
     EmotionChartComponent,
-    EmotionsTrendComponent
+    EmotionsTrendComponent,
+    EmotionAvgChartComponent
   ],
   imports: [
     BrowserModule,

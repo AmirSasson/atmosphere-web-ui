@@ -3,27 +3,30 @@ import { Emotion, EmotionsStat } from './shared/models';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'emotion-chart',
+  selector: 'emotion-avg-chart',
   template: `<div class="card" style="width: 400px;">
-                <img [src]="emotion.urls[0]" class="card-img-top" style="width: 400px;"/>
-                <div style="min-width:400px;">
                   <chart [options]="options"></chart>
-                </div>
               </div>`
 })
-export class EmotionChartComponent implements OnInit {
+export class EmotionAvgChartComponent implements OnInit {
   @Input() emotion: EmotionsStat;
   @Input() title: string;
   options: Options;
   constructor() { }
 
   ngOnInit() {
-    this.title = this.title || "Emotion";
+    this.title = this.title || "Emotions of today";
     this.options = {
       chart: {
-        type: 'pie', width: 400, plotBackgroundColor: null,
+        type: 'bar', width: 400, plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
+      },
+      xAxis: {
+        categories: ['Fear', 'Anger', 'Happiness', 'sadness'],
+        title: {
+          text: null
+        }
       },
       plotOptions: {
         pie: {
@@ -38,12 +41,7 @@ export class EmotionChartComponent implements OnInit {
       title: { text: this.title },
       series: [{
         name: 'Emotions',
-        data: [
-          <DataPoint>{ y: this.emotion.fear, name: "Fear" },
-          <DataPoint>{ y: this.emotion.sadness, name: "Sadness" },
-          <DataPoint>{ y: this.emotion.anger, name: "Anger" },
-          <DataPoint>{ y: this.emotion.happiness, name: "happiness", color: "#00FF00" }
-        ]
+        data: [this.emotion.fear, this.emotion.anger, this.emotion.happiness, this.emotion.sadness]
       }]
     };
 

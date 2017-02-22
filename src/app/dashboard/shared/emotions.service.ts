@@ -26,7 +26,8 @@ export class EmotionsService {
       neutral: 2.02541912E-07,
       sadness: 0.2,
       surprise: 1.79747155E-06,
-      timestamp : 1487779407406
+      timestamp: 1487779407406,
+      urls: ["http://i2.wp.com/www.marcandangel.com/images/9-not-need-happy.jpg?resize=500%2C333"]
     });
     emotions.push(<EmotionsStat>{
       anger: 2.48253527E-05,
@@ -37,7 +38,8 @@ export class EmotionsService {
       neutral: 2.02541912E-07,
       sadness: 0.3,
       surprise: 1.79747155E-06,
-      timestamp : 1487700390618
+      timestamp: 1487700390618,
+      urls: ["http://i2.wp.com/www.marcandangel.com/images/9-not-need-happy.jpg?resize=500%2C333"]
     });
     emotions.push(<EmotionsStat>{
       anger: 2.48253527E-05,
@@ -48,7 +50,8 @@ export class EmotionsService {
       neutral: 2.02541912E-07,
       sadness: 0.1,
       surprise: 1.79747155E-06,
-      timestamp : 1487600390618
+      timestamp: 1487600390618,
+      urls: ["http://i2.wp.com/www.marcandangel.com/images/9-not-need-happy.jpg?resize=500%2C333"]
     });
     emotions.push(<EmotionsStat>{
       anger: 0.9998705,
@@ -59,7 +62,8 @@ export class EmotionsService {
       neutral: 2.02541912E-07,
       sadness: 5.91478E-08,
       surprise: 1.79747155E-06,
-      timestamp : 1487500390618
+      timestamp: 1487500390618,
+      urls: ["http://i2.wp.com/www.marcandangel.com/images/9-not-need-happy.jpg?resize=500%2C333"]
     });
     return Observable.of(emotions);
     //return Observable.of(new Array<Emotion>()).map(o => JSON.stringify(o));

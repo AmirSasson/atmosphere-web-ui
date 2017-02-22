@@ -1,6 +1,6 @@
-<script src="node_modules/chart.js/src/chart.js"></script>
-<div class="row">
-  <!--<div *ngFor="let emotion of _emotionStats">
+<div class="container">
+  <div class="row">
+    <!--<div *ngFor="let emotion of _emotionStats">
     <div>anger</div>
     <div>{{emotion.anger}}</div>
     <div>contempt</div>
@@ -19,12 +19,21 @@
     <div>{{emotion.fear}}</div>
     <div></div>
   </div>-->
-  <div class="row">
-    <emotions-trend></emotions-trend>
-  </div>
-  <div class="row">
-    <emotion-chart [emotion]='latestEmotion'></emotion-chart>
-  </div>
-  <!--<chart [options]="options"></chart>-->
+    <div class="row">
+      <div class="at-trend-container">
+        <emotions-trend></emotions-trend>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <emotion-chart [emotion]='latestEmotion' [title]='"Emotion of the hour"'></emotion-chart>
+      </div>
+       <div class="col-lg-4">
+        <emotion-avg-chart [emotion]='latestEmotion' [title]='"Avg Emotion"'></emotion-avg-chart>
+      </div>
 
+    </div>
+    <!--<chart [options]="options"></chart>-->
+
+  </div>
 </div>

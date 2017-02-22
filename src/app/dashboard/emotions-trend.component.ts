@@ -1,11 +1,11 @@
 import { EmotionsService } from './shared/emotions.service';
 import { Options, DataPoint } from 'highcharts';
 import { Emotion, EmotionsStat, EmotionPoint } from './shared/models';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'emotions-trend',
-  template: `<chart [options]="options"></chart>`
+  template: `<chart *ngIf="options" [options]="options"></chart>`
 })
 export class EmotionsTrendComponent implements OnInit {
   _emotions: Array<EmotionsStat>;
@@ -15,9 +15,6 @@ export class EmotionsTrendComponent implements OnInit {
   constructor(private _service: EmotionsService) {
     this._emotionsPoints = new Map();
   }
-
-
-
 
   public get Emotions(): Array<EmotionsStat> {
     return this._emotions;
@@ -34,7 +31,7 @@ export class EmotionsTrendComponent implements OnInit {
     let series = [];
     this.title = this.title || "Emotions Trend";
     this.options = {
-      chart: { type: 'spline'},
+      chart: { type: 'spline' ,width:1200 },
       xAxis: {
         type: 'datetime',
         dateTimeLabelFormats: {
