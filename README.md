@@ -1,6 +1,6 @@
-## angular2-seed
+## atmosphere-web-ui
 
-A simple starter project demonstrating the basic concepts of Angular 2.
+Dashboard application for Atmoshpere Stattion written in Angular 2.
 
 
 ### Usage
