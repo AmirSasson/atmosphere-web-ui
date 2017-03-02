@@ -1,9 +1,9 @@
 {
-  "name": "SB-Admin-BS4-Angular-2",
-  "version": "0.0.0",
-  "description": "Modular seed project for Angular 2 apps with fast, statically typed build",
+  "name": "atmosphere-web-ui",
+  "version": "1.0.0",
+  "description": "atmosphere web ui application based on angular2 admin seed project (https://github.com/start-angular/SB-Admin-BS4-Angular-2)",
   "repository": {
-    "url": "https://github.com/start-angular/SB-Admin-BS4-Angular-2"
+    "url": "https://github.com/AmirSasson/atmosphere-web-ui"
   },
   "scripts": {
     "build.dev": "gulp build.dev --color --config-env dev",

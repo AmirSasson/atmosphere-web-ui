@@ -24,7 +24,7 @@
               <i class="fa fa-comments fa-5x"></i>
             </div>
             <div class="col-xs-9 text-xs-right">
-              <div class="huge">{{emotionStats.totalEmotions}}</div>
+              <div class="huge" *ngIf="emotionStats">{{emotionStats.totalEmotions}}</div>
               <div>Emotions Captured</div>
             </div>
           </div>
@@ -38,10 +38,10 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-4 col-lg-4">
+    <div *ngIf="emotionStats" class="col-xl-4 col-lg-4">
       <emotion-avg-chart [emotion]="emotionStats.avgEmotion" (title)="'Daily Avarage'"></emotion-avg-chart>
     </div>
-    <div class="col-xl-4 col-lg-4">
+    <div *ngIf="latestEmotion" class="col-xl-4 col-lg-4">
       <emotion-chart [emotion]="latestEmotion" (title)="'Latest Emotion'"></emotion-chart>
     </div>
   </div>

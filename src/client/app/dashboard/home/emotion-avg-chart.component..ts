@@ -27,7 +27,7 @@ export class EmotionAvgChartComponent implements OnInit {
         plotShadow: false,
       },
       xAxis: {
-        categories: ['Fear', 'Anger', 'Happiness', 'sadness'],
+        categories: ['Fear', 'Anger', 'Happiness', 'sadness', 'contempt', 'neutral', 'surprise'],
         title: {
           text: null
         }
@@ -45,7 +45,15 @@ export class EmotionAvgChartComponent implements OnInit {
       title: { text: this.title },
       series: [{
         name: 'Emotions',
-        data: [this.emotion.fear, this.emotion.anger, this.emotion.happiness, this.emotion.sadness]
+        data: [
+          this.emotion.fear,
+          this.emotion.anger,
+          this.emotion.happiness,
+          this.emotion.sadness,
+          this.emotion.contempt,
+          this.emotion.neutral,
+          this.emotion.surprise
+        ]
       }]
     };
 
